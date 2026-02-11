@@ -25,7 +25,7 @@ class RegisterView(generics.CreateAPIView):
 @extend_schema(tags=['Account'], description='Get current user bank account details')
 class AccountDetailView(generics.RetrieveAPIView):
     serializer_class = BankAccountSerializer
-    permissions_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
 
     # We override this to return the current user's bank account
     def get_object(self):
